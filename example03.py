@@ -5,48 +5,6 @@ import math
 # 1. 웹페이지 기본 설정 (모바일 친화적 세팅)
 st.set_page_config(page_title="ETF 20% 리밸런싱 계산기", layout="centered", page_icon="📈")
 
-# 💡 [핵심] 글자 크기 축소 및 모든 여백/줄간격을 타이트하게 만드는 CSS 주입
-st.markdown("""
-    <style>
-        /* 전체 화면 위아래 여백 최소화 */
-        .block-container {
-            padding-top: 1rem !important;
-            padding-bottom: 1rem !important;
-            max-width: 800px;
-        }
-        /* 요소들 사이의 기본 공백(gap) 줄이기 */
-        div[data-testid="stVerticalBlock"] {
-            gap: 0.2rem !important;
-        }
-        /* 전체 글자 크기 축소 (기본 16px -> 14px) */
-        html, body, p, div, span, label, [class*="css"] {
-            font-size: 14px !important;
-        }
-        /* 헤더 여백 축소 */
-        h1 { font-size: 1.5rem !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
-        h2 { font-size: 1.3rem !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
-        h3 { font-size: 1.1rem !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
-        hr {
-            margin-top: 0.5rem !important;
-            margin-bottom: 0.5rem !important;
-        }
-        /* 입력칸 박스 크기 줄이기 */
-        .stNumberInput > div > div > input {
-            font-size: 14px !important;
-            padding: 0.3rem !important;
-            min-height: 2.4rem !important;
-        }
-        /* 컨테이너 박스 내부 여백 축소 */
-        div[data-testid="stVerticalBlockBorderWrapper"] {
-            padding: 0.5rem !important;
-        }
-        /* alert 박스 여백 축소 */
-        div[data-testid="stAlert"] {
-            padding: 0.5rem !important;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 # 2. 포트폴리오 기본 설정 및 디폴트 값
 PORTFOLIO_TICKERS = {
     'KODEX 미국S&P500': '379800.KS',
